@@ -23,9 +23,10 @@
 
 - (IBAction)goTodetail:(UIButton *)sender
 {
-    PDetailVC *detail = [PDetailVC new];
-    [self showPresentedController:detail WithType:PPresentTypeAlert presentSize:[UIScreen mainScreen].bounds.size shadowCanNotDismiss:NO completeHandle:^(BOOL presented) {
-        
+    [self dismissViewControllerAnimated:YES completion:^{
+        if (self.myblock) {
+            self.myblock();
+        }
     }];
     
 }
